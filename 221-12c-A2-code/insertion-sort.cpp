@@ -19,14 +19,14 @@ InsertionSort::sort(int A[], int size)				// main entry point
 	{
 		if(A[i]<A[i-1])
 		{
-			int temp=2;
-			while(A[i]<A[i-temp]&&(i-temp)>=0])
+			int temp;
+			while(A[i]<A[i-1]&&(i-1)>=0])
 			{
-			++temp;
+			temp=A[i-temp];
+			A[i-temp] = A[i];
+			A[i]=temp;
 			}
-		temp=A[i-temp];
-		A[i]=temp;
-		temp=A[i];
+		
 		}
 	
 	}

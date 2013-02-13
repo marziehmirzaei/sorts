@@ -31,6 +31,6 @@ ShellSort::sort(int A[], int size)
 			}
 		}
 	 }
-	 step = (step + 1) / 2 + 1;
+	 step = (step + 1) / 2 - 1;
 	 }
 }
