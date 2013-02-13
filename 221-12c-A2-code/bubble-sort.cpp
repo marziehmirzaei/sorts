@@ -12,26 +12,22 @@ void
 BubbleSort::sort(int A[], int size)			// main entry point
 {
   num_cmps = 0;
-  int num_swaps = 1;
-  int num_sorted = 1;
-  while(num_swaps > 0 && num_sorted < size)
+  bool done = false;
+  while(!done)
   {
-	num_swaps = 0;
-	num_cmps += 2;
-	for(int n = num_sorted; n < size ; ++n)
+	done = true;
+	num_cmps ++;
+	for(int n = 0; n < size ; ++n)
 	{
-		num_swaps = 0;
 		num_cmps++;
 		if(A[n] < A[n-1])
 		{
 			int temp = A[n];
 			A[n] = A[n-1];
 			A[n-1] = temp;
-			num_swaps++;
+			done = false;
 		}
 	}
 	num_cmps++;
-	num_sorted++;
 	}
-	num_cmps+=2;
 }
