@@ -8,6 +8,8 @@
 
 #include "sort.h"
 #include <iostream>
+#include <cmath>
+using namespace std;
 
 void
 RadixSort::sort(int A[], int size)
@@ -19,16 +21,16 @@ for(int i =0; i<size; ++i)//Find largest number
 		if(A[i]>digits)
 		digits=A[i];
 	}
-digits=log10(digits);//find highest digit number
+digits=log(digits);//find highest digit number
 int B[10];
 int C[size];
 int D[size];
-pow=1;
+int power=1;
 while(true)//Get all the digits in the array
 	{
 	for(int j=0; j<size; ++j)//Set digits
 		{
-			D[j]=(A[j]/(pow))%10;
+			D[j]=(A[j]/(power))%10;
 		}
 		
 	//Counting sort starts here
@@ -49,9 +51,9 @@ while(true)//Get all the digits in the array
 		{
 			A[n]=C[n];
 		}
-		if(digits=pow/10)//Detects if done with digits
+		if(digits=power/10)//Detects if done with digits
 			break;
-		pow*=10;
+		power*=10;
 	}		
 		
 }
