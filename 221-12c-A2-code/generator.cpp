@@ -5,6 +5,7 @@
 #include <sstream>
 #include <cstdlib>
 #include <ctime>
+#include <cstring>
 using namespace std;
 
 main(int argc, char** argv)
@@ -16,19 +17,19 @@ main(int argc, char** argv)
 	if(argc > 1)
 		stringstream(argv[1]) >> length;
 	if(argc > 2)
-		if(!argv[2].compare("d"))
+		if(strcmp(argv[2], "d")==0)
 		{
 			random = false;
 			descending = true;
 		}
-		else if(!argv[2].compare("d"))
-		{
-			random = false;
-			descending = false;
-		}
-		else if(!argv[2].compare("r"))
+		else if(strcmp(argv[2], "r")==0)
 		{
 			random = true;
+			descending = false;
+		}
+		else
+		{
+			random = false;
 			descending = false;
 		}
 	if(argc > 3)
@@ -37,9 +38,10 @@ main(int argc, char** argv)
 	}
 	ofstream file(path.c_str());
 	srand(clock());
+	file<<length<<" ";
 	while(length > 0)
 	{
-		file << (rand()) << endl;
+		file << (rand())<<" "<< endl;
 		--length;
 	}
 	file.close();
