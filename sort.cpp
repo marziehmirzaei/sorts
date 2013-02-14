@@ -103,6 +103,7 @@ int main(int argc, char** argv)
    }  
   
    /* read number of integers */
+   cout << "Enter Size >>>";
    int size; //number of integers  
    if (!(cin >> size)) return 1; //exit abnormally
     
