@@ -21,17 +21,17 @@ for(int i =0; i<size; ++i)//Find largest number
 		if(A[i]>digits)
 		digits=A[i];
 	}
-digits=log(digits);//find highest digit number
+digits = floor(log(digits));//find highest digit number
 int B[10];
 int C[size];
 int D[size];
 int power=1;
 int total = 0;
-while(power/10 )//Get all the digits in the array
+while(power <= digits)//Get all the digits in the array
 	{
 	for(int j=0; j<size; ++j)//Set digits
 		{
-			D[j] = (A[j]/(pow(10,power)))%10;
+			D[j] = (A[j]/((int)pow(10.0,power)))%10;
 		}
 		
 	//Counting sort starts here
@@ -60,7 +60,7 @@ while(power/10 )//Get all the digits in the array
 		{
 		B[n] = 0;
 		}
-		power += 1;
+		++power;
 	}		
 		
 }
