@@ -26,9 +26,13 @@ int B[10];
 int C[size];
 int D[size];
 int power=1;
-int total = 0;
+
 while(power <= digits)//Get all the digits in the array
 	{
+	for(int n = 0; n < 10; ++n)
+		{
+		B[n] = 0;
+		}
 	for(int j=0; j<size; ++j)//Set digits
 		{
 			D[j] = (A[j]/((int)pow(10.0,power)))%10;
@@ -39,6 +43,7 @@ while(power <= digits)//Get all the digits in the array
 		{
 			B[D[k]]++;
 		}
+	int total = 0;
 	for(int l=0; l<10; ++l)//Do the less than equal part.
 		{	
 			int temp = B[l];
@@ -47,7 +52,7 @@ while(power <= digits)//Get all the digits in the array
 		}
 	for(int m=0; m<size; ++m)//Actual Sorting Here
 		{
-		C[B[D[m]]]=A[m];
+		C[B[D[m]]] = A[m];
 		++B[D[m]];
 		}
 	for(int n=0; n<size; ++n)//reset A with new sorted part
@@ -56,10 +61,7 @@ while(power <= digits)//Get all the digits in the array
 			C[n] = 0;
 			D[n] = 0;
 		}
-	for(int n = 0; n < 10; ++n)
-		{
-		B[n] = 0;
-		}
+	
 		++power;
 	}		
 		
