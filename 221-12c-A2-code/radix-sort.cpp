@@ -40,7 +40,7 @@ while(true)//Get all the digits in the array
 		{	
 			B[l]=B[l]+B[l-1];
 		}
-	for(int m=0; m<size; ++m)//Actual Sorting Here
+	for(int m=size-1; m>=0; --m)//Actual Sorting Here
 		{
 		C[B[D[m]]-1]=A[m];
 		--B[D[m]];
