@@ -26,11 +26,12 @@ int B[10];
 int C[size];
 int D[size];
 int power=1;
-while(true)//Get all the digits in the array
+int total = 0;
+while(power/10 )//Get all the digits in the array
 	{
 	for(int j=0; j<size; ++j)//Set digits
 		{
-			D[j]=(A[j]/(power))%10;
+			D[j] = (A[j]/(pow(10,power)))%10;
 		}
 		
 	//Counting sort starts here
@@ -38,22 +39,28 @@ while(true)//Get all the digits in the array
 		{
 			B[D[k]]++;
 		}
-	for(int l=1; l<10; ++l)//Do the less than equal part.
+	for(int l=0; l<10; ++l)//Do the less than equal part.
 		{	
-			B[l]=B[l]+B[l-1];
+			int temp = B[l];
+			B[l] = total;
+			total += temp;
 		}
 	for(int m=0; m<size; ++m)//Actual Sorting Here
 		{
-		C[B[D[m]]-1]=A[m];
-		--B[D[m]];
+		C[B[D[m]]]=A[m];
+		++B[D[m]];
 		}
 	for(int n=0; n<size; ++n)//reset A with new sorted part
 		{
-			A[n]=C[n];
+			A[n] = C[n];
+			C[n] = 0;
+			D[n] = 0;
 		}
-		if(digits=power/10)//Detects if done with digits
-			break;
-		power*=10;
+	for(int n = 0; n < 10; ++n)
+		{
+		B[n] = 0;
+		}
+		power += 1;
 	}		
 		
 }
