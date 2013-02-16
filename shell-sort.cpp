@@ -19,15 +19,21 @@ int temp = 0;
  int step = size/2;
  while(step > 0)
  {
+	++num_cmps;
 	for(int i = step; i < size; ++i)
 	{
+		++num_cmps;
 		for(int j = i; j >= step && A[j] < A[j-step]; j -= step)
 		{
+			num_cmps += 2;
 			temp = A[j];
 			A[j] = A[j-step];
 			A[j - step] = temp;
 		}
+		num_cmps += 2;
 	}
+	++num_cmps;
 	step /= 2;
 }
+++num_cmps;
 }

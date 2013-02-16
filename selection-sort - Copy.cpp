@@ -22,7 +22,7 @@ SelectionSort::sort(int A[], int size)				// main entry point
 		min = n;
 		for(int j = n + 1; j < size; ++j)
 		{
-			num_cmps += 2;
+			num_cmps++;
 			if(A[j] < A[min])
 				min = j;
 		}
@@ -31,5 +31,4 @@ SelectionSort::sort(int A[], int size)				// main entry point
 		A[n] = A[min];
 		A[min] = temp;
 	}
-	num_cmps++;
 }
