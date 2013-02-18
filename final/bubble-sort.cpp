@@ -16,10 +16,9 @@ BubbleSort::sort(int A[], int size)			// main entry point
   while(!done)
   {
 	done = true;
-	num_cmps ++;
-	for(int n = 0; n < size ; ++n)
+	for(int n = 1; n < size ; ++n)
 	{
-		num_cmps++;
+		num_cmps += 2;
 		if(A[n] < A[n-1])
 		{
 			int temp = A[n];

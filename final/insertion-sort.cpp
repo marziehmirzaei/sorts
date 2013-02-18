@@ -15,17 +15,19 @@ InsertionSort::sort(int A[], int size)				// main entry point
 int j=0;
 int temp=0;
 int num=0;
+num_cmps++;
         for (int i=1; i<size; ++i) 
         {
            temp= A[i];
            j = i-1;
+		   num_cmps+=3;
 		   for(num=0; (j >= 0) && (A[j] > temp); num+=2)
            {
                A[j+1] = A[j];
                j -= 1;
+			   num_cmps+=2;
            }
             A[j+1]=temp;
-			num_cmps+=num;
         }
   }
 

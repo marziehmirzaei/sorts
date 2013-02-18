@@ -11,7 +11,7 @@
 
 class Sort {
 protected:
-   int num_cmps; // number of comparisons performed in sort function
+   long int num_cmps; // number of comparisons performed in sort function
 public:
    virtual void sort(int A[], int size) = 0;    // main entry point
    bool testIfSorted(int A[], int size);        // returns false if not sorted
