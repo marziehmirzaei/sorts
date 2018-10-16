@@ -1,7 +1,7 @@
 #ifndef SORTING_ALGS
 #define SORTING_ALGS
 
-template<typename T>#for practicing! sorry!
+template<typename T>
 void swap(T first, T second);
 template<typename T>
 T selectionSort(T begin, T end);
